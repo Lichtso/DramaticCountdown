@@ -4,7 +4,7 @@
 * Deactivates after reaching its target
 * Visible segment shadows for more realism
 * Red on black background
+* Blinkenlights colons
 * Centered using responsive layout
 * Cross browser and platform compatibility
-* Stunning simplicity: 55 LoC / 2kB!
 * Just stylish and awesome

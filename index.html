@@ -37,6 +37,8 @@
                         return;
                     }
                     target = new Date(prompt("YYYY/MM/DD HH:MM:SS"));
+                    if(isNaN(target.getTime()))
+                        target = new Date();
                 }
                 let seconds = Math.max(0, target.getTime()-Date.now())/1000;
                 if(seconds == 0) {
@@ -48,7 +50,8 @@
                 seconds -= hours*3600;
                 const minutes = Math.floor(seconds/60);
                 seconds = Math.floor(seconds-minutes*60);
-                foregroundSegments.innerText = pad(Math.min(99, hours))+':'+pad(minutes)+':'+pad(seconds);
+                const blinkenlights = (seconds%2 == 0) ? ' ' : ':';
+                foregroundSegments.innerText = pad(Math.min(99, hours))+blinkenlights+pad(minutes)+blinkenlights+pad(seconds);
             }, 1000);
         </script>
     </body>
